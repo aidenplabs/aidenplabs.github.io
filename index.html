@@ -54,7 +54,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,15,20,.9)
 .nls a:hover,.nls a.on{color:var(--t1)}
 .ncta{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ac);border:1px solid var(--ach);padding:6px 13px;border-radius:6px;transition:all .15s}
 .ncta:hover{background:var(--acd)}
-@media(max-width:660px){.nls{display:none}}
+@media(max-width:660px){.nls{display:none}.hmb{display:flex}}
+.hmb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hmb span{width:20px;height:2px;background:var(--t2);border-radius:2px;transition:all .2s}
+.mob-menu{display:none;position:fixed;top:54px;left:0;right:0;background:rgba(13,15,20,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:16px 24px;z-index:199;flex-direction:column;gap:4px}
+.mob-menu.open{display:flex}
+.mob-menu a{font-size:15px;color:var(--t2);padding:10px 0;border-bottom:1px solid var(--bd);transition:color .15s}
+.mob-menu a:last-child{border-bottom:none}
+.mob-menu a:hover{color:var(--t1)}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;font-weight:500;border-radius:7px;padding:9px 18px;letter-spacing:.02em;transition:all .15s}
@@ -246,10 +253,20 @@ footer{padding:42px 0;text-align:center}
       <a href="#" onclick="go('study')"    id="nl-study">Study Hub</a>
       <a href="#" onclick="go('about')"    id="nl-about">About</a>
     </div>
-    <a href="mailto:aivsaiden@gmail.com" class="ncta">Contact →</a>
+    <a href="mailto:aivsaiden@gmail.com" class="ncta">Contact →</a
+	<button class="hmb" onclick="toggleMob()" aria-label="Menu">
+	  <span></span><span></span><span></span>
+   	</button>  
   </div>
 </nav>
 
+<div class="mob-menu" id="mob-menu">
+  <a href="#" onclick="go('home');toggleMob()">Home</a>
+  <a href="#" onclick="go('projects');toggleMob()">Projects</a>
+  <a href="#" onclick="go('roadmap');toggleMob()">Roadmap</a>
+  <a href="#" onclick="go('study');toggleMob()">Study Hub</a>
+  <a href="#" onclick="go('about');toggleMob()">About</a>
+</div>
 
 <!-- ════════════ HOME ════════════ -->
 <div id="page-home" class="page active">
