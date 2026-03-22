@@ -253,7 +253,7 @@ footer{padding:42px 0;text-align:center}
       <a href="#" onclick="go('study')"    id="nl-study">Study Hub</a>
       <a href="#" onclick="go('about')"    id="nl-about">About</a>
     </div>
-    <a href="mailto:aivsaiden@gmail.com" class="ncta">Contact →</a
+    <a href="mailto:aivsaiden@gmail.com" class="ncta">Contact →</a>
 	<button class="hmb" onclick="toggleMob()" aria-label="Menu">
 	  <span></span><span></span><span></span>
    	</button>  
@@ -828,6 +828,11 @@ function closeStudy() {
 }
 
 document.addEventListener('DOMContentLoaded', initStudy);
+
+function toggleMob(){
+  document.getElementById('mob-menu').classList.toggle('open');
+}
+	
 </script>
 </body>
 </html>
