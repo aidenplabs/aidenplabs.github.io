@@ -67,12 +67,3 @@ I use it to reflect:
 - Vanilla JavaScript
 - GitHub Pages
 
-## Run locally
-
-Because this is a static site, you can open `index.html` directly in a browser.
-
-Or run a simple local server:
-
-```bash
-# from the project folder
-python3 -m http.server 8000
